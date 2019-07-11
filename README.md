@@ -8,8 +8,8 @@ Tested and Build both Ubuntu and Windows systems.
 
 For local build you can just build docker and run container .
 For online build I used Heroku for cloud provider.
-![alt text](https://pasteboard.co/InuRBWu.png)
-![alt text](https://pasteboard.co/InuRU1Q.png)
+![alt text](https://i.postimg.cc/V6zdRWNK/Screenshot-Capture-2019-07-11-18-00-12.png)
+![alt text](https://i.postimg.cc/5NXjn0xW/Screenshot-Capture-2019-07-11-18-00-20.png)
 
 
 Any problems please notify me uates@gtu.edu.tr / ugurkanates97@gmail.com
