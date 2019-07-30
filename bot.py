@@ -61,6 +61,14 @@ def main():
     dp.add_handler(CommandHandler("Basarilar", basarilar))
     dp.add_handler(CommandHandler("CiftveYanDal", ciftveYanDal))
     dp.add_handler(CommandHandler("EgitimDili", egitimDili))
+    dp.add_handler(CommandHandler("Akreditasyon", Akreditasyon))
+    dp.add_handler(CommandHandler("YurtDisi", YurtDisi))
+    dp.add_handler(CommandHandler("KykYurt", KykYurt))
+    dp.add_handler(CommandHandler("YatayGecis", YatayGecis))
+    dp.add_handler(CommandHandler("NasilBilgisayar", NasilBilgisayar))
+    dp.add_handler(CommandHandler("HangiDiller", HangiDiller))
+
+
 
     dp.add_handler(CommandHandler("UzmanlikAlanBelgesi", uzmanlikAlanBelgesi))
     dp.add_handler(CommandHandler("YokAtlas", yokAtlas))
@@ -110,6 +118,12 @@ def start(bot, update):
         \n /Basarilar - Başarılarımız\
         \n /CiftveYanDal - Çift Dal ve Yan Dal Olanakları\
         \n /EgitimDili - Eğitim Dili\
+        \n /YurtDisi - Yurt Dışında Doktora yapan eski mezunumuzdan\
+        \n /Akreditasyon - Akreditasyon ve GTÜ hakkında\
+        \n /YatayGecis - Yatay Geçişle İlgili Sorular\
+        \n /KykYurt - KYK ve Genel Olarak Barınma için sorulan sorular\
+        \n /HangiDiller - Bilgisayar bilmeden gelebilir miyim ? Hangi Programlama dilleri lazım\
+        \n /NasilBilgisayar - Nasil Bilgisayar almalıyım ?\
         \n /UzmanlikAlanBelgesi - Diplomanın yanında herhangi bir ek belge veriliyor mu?\
         \n /YokAtlas - YÖK Atlas neden önceki yıllara ait başarı sıranızı göstermiyor? \
         \n /GirisimciDestekleri - Üniversitenin girişimci desteği var mı? \
@@ -129,13 +143,22 @@ def welcome(bot, update):
         except Exception as e:
             new_user = new_user_obj['first_name'];
 
-        WELCOME_MESSAGE = "Merhaba " + str(new_user) + ", Gebze Teknik Universitesi Bilgisayar Muhendisligi Grubuna Hos Geldin! Bize kendini tanitmak ister misin? Seni tanimaktan memnuniyet duyariz 🙂. Ayrica merak ettigin konularda bilgi almak icin botumuzu 🤖 buradan @GTUBilMuh2019Bot ziyaret edebilirsin."
+        WELCOME_MESSAGE = "Merhaba " + str(new_user) + ", Gebze Teknik Universitesi Bilgisayar Muhendisligi Grubuna Hos Geldin! Bize kendini tanitmak ister misin? Seni tanimaktan memnuniyet duyariz 🙂. Ayrica merak ettigin konularda bilgi almak icin botumuzu 🤖 buradan @GTUBilMuh2019Bot ziyaret edebilirsin veya  telefonla aranıp birebir iletişime geçilmesini istiyorsan bit.ly/gebzetanıtım sitesinden bilgilerini girebilirsin."
 
         bot.sendMessage(chat_id=chat_id, text=WELCOME_MESSAGE)
+
+def NasilBilgisayar(bot, update):
+    
+    update.message.reply_text('Bilgisayar mühendisliğinde lisans eğitiminde bitirme projeniz haricinde çok ağır işlemler yapılmamaktadır. Bilgisayarınızın çok güçlü olmasından çok hafif ve taşınabilir olması daha önemlidir. Ekran çözünürlüğünün gözünüzü ağrıtmaması gece ödev yaparken size fayda sağlayacaktır.\
+            i5 işlemcisi olan 8GB ram ve SSD(şart değil) içeren bir laptop işinizi görecektir.Ailelerinizi bu konuda ağır yük altına sokmamanız daha yararlı olacaktır çok güç gerektiren derin öğrenme ağları vb gibi işlemlerde okulun imkanlarını kullanabilirsiniz.')
 
 def nedenGtu(bot, update):
     
     update.message.reply_text('GTU konumu itibari ile GOSB, TÜBİTAK Serbest Bölge, KOSGEB ve benzeri bir çok AR-GE Merkezi alanında bulunmaktadır. Bu durum staj, mezuniyet öncesi ve sonrası iş olanakları sağlamaktadır. İstanbul’a yakın olması nedeniyle İstanbul’da ikamet etme ve çalışma olanağı sağlamaktadır. Öğrencilere yaptırılan projelerle sadece teorik bilgide kalmayan bunun yanında saha tecrübesi kazandıran bir eğitim verilmektedir.')
+
+def HangiDiller(bot, update):
+    
+    update.message.reply_text('Bilgisayar Mühendisliği lisans eğitimi boyunca C,C++,Java,Python,LISP,C#,Assembly(Makine Dili) gibi programlama dilleri gösterilmektedir.Onceden bilgisayar hakkında bir bilgi sahibi olmanıza gerek yoktur derslerinize zamanıda calisirsaniz dersleri geçebilecek kadar bilgi almaktasınız.')
 
 def arastirmaOlanaklari(bot, update):
     
@@ -182,6 +205,11 @@ def calismaOrtami(bot, update):
 def isImkanlari(bot, update):
     
     update.message.reply_text('Bilişim teknolojileri hızla gelişmekte ve günümüzde sağlık, eğitim, haberleşme, savunma, eğlence ve bankacılık gibi birçok alanda önemli bir yere sahip olmaktadır. Bu nedenle Bilgisayar Mühendisliği bölümü birçok alanda iş bulma kolaylığı sunmaktadır. Çalışanlarının büyük bir bölümü bilgisayar mühendislerinden oluşan ve temel işi mühendislik olan yazılım şirketlerinde, farklı alanlarda çalışan birçok şirketin bilişim bölümlerinde, devlet bünyesinde proje odaklı çalışan araştırma-geliştirme bölümlerinde, kamu sektöründe ve üniversitelerde bilgisayar mühendisliği bilgisayar mühendisi istihdam edilmektedir. Bilgisayar mühendisleri birçok mesleğe kıyasla yüksek rağbet görmektedirler ve yüksek ücretler alırlar. Buna bağlı olarak iş değiştirme oranları bilgisayar mühendislerinde yüksek seviyelerdedir ve işsiz kalma süreleri oldukça azdır. Özellikle devletin de desteklediği bir çok kobi projesiyle ile kendi girişimlerini kurabilme şansları da bilgisayar mühendislerinin yüksek kazanç elde edebilmelerine olanak sağlamaktadır.')
+
+def KykYurt(bot, update):
+    
+    update.message.reply_text('Kyk yurduna çıkma ihtimali zor mudur? = Değildir KYK yurtlarında yer bulunmaktadır 3 kişilik odalara getirildi kontenjan artırılması için. Kyk Yurtları dışında Şifa mahallesi öğrencie evleri 2+1/3+1 650-750 lira arasındadır.\
+            KYK yurdundan devlet otobüsyle ulaşım 45 dakika sürmekte ve aylık 70-80 lira tutmaktadır. Özel servis ile ulaşım 15 dakika sürmekte ve ücreti 150-160 lira arası değişmektedir.')
 
 def gorevTanimlari(bot, update):
     
@@ -240,7 +268,10 @@ def ulasim(bot, update):
 
 def erasmus(bot, update):
     
-    update.message.reply_text('Üniversitemiz Erasmus öğrenim hareketliliği programına dahildir ve en az 3 ay en fazla 12 ay olacak şekilde öğrencilere yurt dışı deneyimi, çok kültürlü ortamda ders işleme, değişik kültürleri tanıma, Türk kültürünü tanıtma, yeni arkadaşlar edinme, farklı bir okulda öğrenci olabilme ve farklı bir sistem görebilme olanakları kazandırır. GYTE Bilgisayar Mühendisliği Fransa, İspanya, Almanya, Belçika, Polonya gibi bir çok farklı ülkedeki üniversitelere bu program ile öğrenciler göndermektedir.')
+    update.message.reply_text('Üniversitemiz Erasmus öğrenim hareketliliği programına dahildir ve en az 3 ay en fazla 12 ay olacak şekilde öğrencilere yurt dışı deneyimi, çok kültürlü ortamda ders işleme, değişik kültürleri tanıma, Türk kültürünü tanıtma, yeni arkadaşlar edinme, farklı bir okulda öğrenci olabilme ve farklı bir sistem görebilme olanakları kazandırır. GTU Bilgisayar Mühendisliği Fransa, İspanya, Almanya, Belçika, Polonya gibi bir çok farklı ülkedeki üniversitelere bu program ile öğrenciler göndermektedir.\
+            Erasmus değişim programı olduğu için bölümün ile ilgili ders alıp 1 dönem veya 2 dönem farklı bir ülkede ve okulda eğitim görme fırsatı buluyorsun. Ülkede kaldığın süre zarfında gittiğin okulun eğitiminin yaninda geziyorsun farkı kültür görüyorsun, o ülkenin dilini ve kulturunu kendine katiyorsun ve büyük tecrübeler edinmiş oluyorsun. \
+                    Dil konusunda gideceğin okula göre değişen bir durum oluyor bu. Bazı okullar kendi bulundukları ülkenin dilinde belirli bir seviyede olmanı isteyebiliyorlar ama bazı okullar için eğitim dilleri %100 ingilizce olduğundan dolayı sadece İngilizce yeterli olabiliyor. Benim gideceğim okulda Fransızca zorunluluğu yok mesela ben de bilmiyorum. Bu sayede hem Fransızca öğrenip kendimi geliştireceğim hem de İngilizcemi üst kademeye taşımış olacağım.\
+Bunun yanında Erasmus stajı denen bir ayrı durum daha var burada da belirli bir süreliğine farklı bir ülkede stajini yapıyorsun. Bu programların hepsi devlet destekli oluyor. Gittiğin ülkeye göre ve erasmus için gireceğin sıralamana göre belirli bir miktar aylık hesaplama ile hibe aliyorsun. Genelde bizim okulda hibe almayan öğrenci kalmıyor.')
 
 
 def ogrenciykenCalisma(bot, update):
@@ -258,6 +289,12 @@ def basarilar(bot, update):
     
     update.message.reply_text('Basarilarimi gormek icin: http://www.gtu.edu.tr/icerik/8/4200/display.aspx?languageId=1')
 
+def YurtDisi(bot, update):
+    
+    update.message.reply_text('Merhaba,ben Şeyma 2015 lisans 2018 yüksek lisans GTU mezunuyum.Akredatisyon mevzusu ile ilgili birseyler söyleyebilirim sanirim.Bu yıl basinda İngiltere başta olmak üzere,güney Kore, Finlandiya,Almanya gibi farklı ülkelere doktora başvurusu yaptım.Aranan şeyler ielts,iyi bir ortalama(honor student olup olamama),projeler,mulakatlarda sorulan matamatik(lineer cebir) sorularına  yanıtlar, yaptığım işlerle ilgili sorulara yanıtlar  idi. \
+             Online kod da yazdırdılar ancak doktora bursu için ortalamanın çok önemli olduğunu farkettim.akreditasyon ise kimsenin umrunda olmadı.suan okul iki dilde mezuniyet belgesi veriyor onu yollamak her yer için yeterli oldu.guney Kore \
+                     de burs kazandım ve onlar bir miktar daha doküman konusunda titizdi(ailemin her türlü belgesini noterde cevirtip cevirtip istediler) ama onlar da akreditasyon sormadilar. Cambridge doktorada 3.80 lisans notu altını almıyor onu ogredim. Avrupa bir miktar daha rahat ama her halükarda akreditasyon mevzusu hiç olmadı. Şuan İngiltere de doktora yapıyorum bu arada.')
+
 
 def ciftveYanDal(bot, update):
     
@@ -266,6 +303,19 @@ def ciftveYanDal(bot, update):
 def egitimDili(bot, update):
     
     update.message.reply_text('Bilgisayar Mühendisliğinde eğitim dili %100 İngilizcedir. Öğrenciler eğitime başlamadan önce 1 yıl İngilizce hazırlık kursu görmektedirler. İngilizceleri yeterli olan öğrenciler kursa başlamadan önce İngilizce hazırlık geçiş sınavına girerek, bu kurstan muaf olarak eğitime başlama hakkına sahiptir.')
+
+def Akreditasyon(bot, update):
+    
+    update.message.reply_text('Akreditasyon alınmak üzereyken yüzde otuzdan yüzde yüz ingilizce eğitime  geçildiği için \
+            Akreditasyon MÜDEK alacaktık vazgeçtik anlamlı olmadığına karar verdik şimdi ABET alınacak, ancak bunlar bizim gibi bölümler için sadece ekstra bir etiketten öteye gitmiyor. Ama işte bazı velileri tatmin ediyor.\
+        Siz mezun olduğunuzda zaten birkaç yıllık ABET akreditasyonumuz olmuş olacaktır.')
+
+def YatayGecis(bot, update):
+    
+    update.message.reply_text('Merhabalar ben yatay geçiş süreciyle yerleşen bir arkadaşım , merkezi yerleştirme puanı ile yatay geçiş yapacaklar için yaşadığım süreçten ve Gtü bilgisayarı neden tercih ettiğimden kısaca bahsedeceğim. Benim zamanımda Lys ve Ygs olduğu için puan türü farklı olabilir ancak MF-4 ile geçiş yapmıştım, okulun açtığı kontenjan kadar kişi puan sıralaması doğrultusunda kabul ediliyor. Benimle beraber 2015 senesinde 3 kişi daha geçiş yapmıştı yani kontenjan 4 diye düşünüyorum. Hazırlık okuma durumu-Eğer okulunuzdan geçerli bir yabancı dil belgeniz var ise yani daha önce hazırlık okuyup başarı ile geçtiyseniz burada hazırlık okumanıza gerek kalmıyor. Ancak Türkçe bir bölümden geçiyorsanız, maalesef GTÜ’de hazırlık sınavını geçmelisiniz. Ders saydırma - Okulunuzun size verdiği havuz derslerinin(Mat,Fizik,Türkçe vb.) CC ve daha üstü olanlarını geçiş yaptığınızda saydırabilirsiniz.\
+    \n Yatay geçiş yaparken istenen belgeler içerisinde, önceki okulunuzdan başarı ile geçtiğiniz derslerin dökümünü çıkartmanız istenmektedir. Bölüm dersleri için ise tavsiyem, tamamını GTÜ’den almanızdır. İki üniversite görmüş biri olarak söylemeliyim ki, ders içerikleri ve niteliği çok farklı oluyor. Neden GTÜ bilgisayar -Eğitiminiz sadece derste kalmıyor, verilen ödevler ve projeler ile hem derste işlenen konu pekişmiş oluyor hem de sizi iş hayatının yoğunluğuna hazırlanmış oluyorsunuz. Belki okul eğitiminde ağırlıklı olarak console eğitimi verilse de, öğrencilerin çoğu yaz tatillerinde ya da mezun olduktan sonra web, mobil gibi popüler alanlara kolaylıkla kayabilecek yeterlilikte ve özgüvende oluyorlar.\
+    \n Ayrıca öğrenciler çok rahat bir biçimde 3. ve 4. sınıfta okurken çalışabilecekleri gibi, mezun olur olmaz rahatlıkla iş bulabiliyorlar. Kötü yanları peki? -Gerçekten vaktinizin çoğunu okul alacak, bunu göze almalısınız. Ben çok hafta biliyorum, 4 ödev teslim ettiğim oldu bu da neredeyse hiçbir günün bana kalmaması anlamına geliyordu. Ayrıca okulun Gebze’de olması da bir dezavantaj olarak görülebilir ancak şanslısınız ki Marmaray açıldı :) . Nasıl Girebiliriz - \
+    \n Arkadaşlar yatay geçiş her üniversiteden yapılabilir fakat 2 çeşit yatay geçiş var biri önceki seneler puanı tuttuğu halde yazmayıp sonradan geçmeyi düşünenler için(merkezi yatay geçiş) diğeri ortalama ile yatay geçiş bunun içinde belli bir ortalamanın üstünde olup başvuruyorsunuz tabi başka kriterlere de bakılabilir o dönem başvuranlar arasında listeye alınıyorsunuz eğer şartları(yaptığınız GNO,girdiğiniz sene ki sınav puanı gibi katmanların belli katsayılarla çarpılıp size puan çıkarılması) sağlarsanız ve kontenjana girerseniz geçebilirsiniz . Tüm üniversitelerde böyle bu olay , ders denklik olayı ayrı bir olay tabi')
 
 def uzmanlikAlanBelgesi(bot, update):
     
