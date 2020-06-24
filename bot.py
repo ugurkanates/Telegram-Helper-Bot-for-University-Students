@@ -64,6 +64,7 @@ def main():
     dp.add_handler(CommandHandler("Akreditasyon", Akreditasyon))
     dp.add_handler(CommandHandler("YurtDisi", YurtDisi))
     dp.add_handler(CommandHandler("KykYurt", KykYurt))
+    dp.add_handler(CommandHandler("YapayZeka", YapayZeka))
     dp.add_handler(CommandHandler("YatayGecis", YatayGecis))
     dp.add_handler(CommandHandler("NasilBilgisayar", NasilBilgisayar))
     dp.add_handler(CommandHandler("HangiDiller", HangiDiller))
@@ -87,7 +88,7 @@ def main():
     # Start the Bot
     PORT = int(os.environ.get('PORT', '8443')) 
     updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN) 
-    updater.bot.set_webhook("https://gtu-bilmuh-bot-2019.herokuapp.com/" + TOKEN) 
+    updater.bot.set_webhook("https://gtu-bilmuh-bot-2020.herokuapp.com/" + TOKEN) 
     updater.idle()
 
     # Start the Bot
@@ -122,6 +123,7 @@ def start(bot, update):
         \n /Akreditasyon - Akreditasyon ve GTÜ hakkında\
         \n /YatayGecis - Yatay Geçişle İlgili Sorular\
         \n /KykYurt - KYK ve Genel Olarak Barınma için sorulan sorular\
+        \n /YapayZeka - Yapay Zeka Nedir?\
         \n /HangiDiller - Bilgisayar bilmeden gelebilir miyim ? Hangi Programlama dilleri lazım\
         \n /NasilBilgisayar - Nasil Bilgisayar almalıyım ?\
         \n /UzmanlikAlanBelgesi - Diplomanın yanında herhangi bir ek belge veriliyor mu?\
@@ -132,7 +134,7 @@ def start(bot, update):
         \n /KampusFotolari - Kampüsümüzden görüntüler\
         \n /HangiBolumuSecmeliyim - Bilgisayar Mühendisliğini mi seçmeliyim, XXXX Mühendisliğini mi seçmeliyim??\
         \n /GrupKurallari - Grubumuzun ufak kuralları \
-        \n Adayları Bilgilendirme Grubu - https://t.me/GTU_CSE_2019")
+        \n Adayları Bilgilendirme Grubu - https://t.me/GTU_CSE_2020")
  
 def welcome(bot, update):
     for new_user_obj in update.message.new_chat_members:
@@ -143,7 +145,7 @@ def welcome(bot, update):
         except Exception as e:
             new_user = new_user_obj['first_name'];
 
-        WELCOME_MESSAGE = "Merhaba " + str(new_user) + ", Gebze Teknik Universitesi Bilgisayar Muhendisligi Grubuna Hos Geldin! Bize kendini tanitmak ister misin? Seni tanimaktan memnuniyet duyariz 🙂. Ayrica merak ettigin konularda bilgi almak icin botumuzu 🤖 buradan @GTUBilMuh2019Bot ziyaret edebilirsin veya  telefonla aranıp birebir iletişime geçilmesini istiyorsan bit.ly/gebzetanıtım sitesinden bilgilerini girebilirsin."
+        WELCOME_MESSAGE = "Merhaba " + str(new_user) + ", Gebze Teknik Universitesi Bilgisayar Muhendisligi Grubuna Hos Geldin! Bize kendini tanitmak ister misin? Seni tanimaktan memnuniyet duyariz 🙂. Ayrica merak ettigin konularda bilgi almak icin botumuzu 🤖 buradan @GTUBilMuh2020Bot ziyaret edebilirsin veya  telefonla aranıp birebir iletişime geçilmesini istiyorsan bit.ly/gebzetanıtım sitesinden bilgilerini girebilirsin."
 
         bot.sendMessage(chat_id=chat_id, text=WELCOME_MESSAGE)
 
@@ -210,6 +212,12 @@ def KykYurt(bot, update):
     
     update.message.reply_text('Kyk yurduna çıkma ihtimali zor mudur? = Değildir KYK yurtlarında yer bulunmaktadır 3 kişilik odalara getirildi kontenjan artırılması için. Kyk Yurtları dışında Şifa mahallesi öğrencie evleri 2+1/3+1 650-750 lira arasındadır.\
             KYK yurdundan devlet otobüsyle ulaşım 45 dakika sürmekte ve aylık 70-80 lira tutmaktadır. Özel servis ile ulaşım 15 dakika sürmekte ve ücreti 150-160 lira arası değişmektedir.')
+def YapayZeka(bot, update):
+    
+    update.message.reply_text('Yapay Zeka nedir? Yapay zekâ, bir bilgisayarın veya bilgisayar kontrolündeki bir robotun çeşitli faaliyetleri zeki canlılara benzer şekilde yerine getirme kabiliyeti.İngilizce artificial intelligence kavramının akronimi olan AI sözcüğü de bilişimde sıklıkla kullanılır. Yapay zekâ çalışmaları genellikle insanın düşünme yöntemlerini analiz ederek bunların benzeri yapay yönergeleri geliştirmeye yöneliktir.\
+        Okulumuzda neredeyse tüm hocalarımız yapay zekanın bir alanında çalışma yapmış ve yapmaya devam etmektedirler.Çalışma konuları arasında Makine Zekası,Yapay Sinir Ağları,Doğal Dil İşleme,\
+        Konuşma Sentezi,Uzman Sistemler,Örüntü Tanıma,Genetik Algoritmalar,Bulanık Mantık,Pekiştirmeli Öğrenme gibi alanlar bulunmaktadır.Çalışma alanlarıyla ilgili detaylı video için \
+            https://www.youtube.com/watch?v=ZJixNvx9BAc izleyebilirsiniz')
 
 def gorevTanimlari(bot, update):
     
@@ -345,7 +353,7 @@ def error(bot, update, error):
 def grupKurallari(bot, update):
      update.message.reply_text('1) İlk olarak kendinizi lütfen tanıtınız. Aday iseniz, isim sıralama bizim için yeterlidir.\
                                 \n2) Üniversite öğrencisi/görevlisi iseniz, isim sınıf veya göreviniz vs. (esktralar sizden 🙂)\
-                                \n3) Üniversite mezunu iseniz, çalıştığınız kurum ve pozisyon (esktralar sizden 🙂)\
+                                \n3) Üniversite mezunu iseniz, çalıştığınız kurum ve pozisyon (ekstralar sizden 🙂)\
                                 \n4) Mesajlarımızı yazarken lütfen bir metin halinde gönderelim. Bir kaç kelime yazıp "enter" basmak gruptaki çalışanları düşününce çok hoş bir durum olmuyor, grubun sessize alınmasını istemeyiz 🙂\
                                 \n5) Grupta profesöründen bölüm öğrencisine kadar insanlar olduğunu unutmayıp saygı ve sevgi çerçevesini bozmayalım. (Bozanlar gruptan 1. uyarıdan sonra nazikçe çıkarılacaktır.)\
                                 \n6) Grupta sizleri bilgilendirmek için varız. Grup kurulduğu günden itibaren mesajları görmeniz mümkündür. Bu yüzden aratma opsiyonunu kullanarak tek kelimelik aramalar ile sorunuzun cevabına ulaşabilirsiniz. Bulamazsanız cevaplamak için buradayız zaten 🙂')
