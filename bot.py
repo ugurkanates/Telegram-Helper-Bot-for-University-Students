@@ -68,6 +68,10 @@ def main():
     dp.add_handler(CommandHandler("YatayGecis", YatayGecis))
     dp.add_handler(CommandHandler("NasilBilgisayar", NasilBilgisayar))
     dp.add_handler(CommandHandler("HangiDiller", HangiDiller))
+    dp.add_handler(CommandHandler("Siralama", Siralama))
+    dp.add_handler(CommandHandler("KacYildaMezun", KacYildaMezun))
+
+
 
 
 
@@ -75,7 +79,6 @@ def main():
     dp.add_handler(CommandHandler("YokAtlas", yokAtlas))
     dp.add_handler(CommandHandler("GirisimciDestekleri", girisimciDestekleri))
     dp.add_handler(CommandHandler("IsBulmaOranlari", isBulmaOranlari))
-    dp.add_handler(CommandHandler("HocalarimizAyriliyormu", hocalarimizAyriliyormu))
     dp.add_handler(CommandHandler("KampusFotolari", kampusFotolari))
     dp.add_handler(CommandHandler("HangiBolumuSecmeliyim", hangiBolumuSecmeliyim))
     dp.add_handler(CommandHandler("GrupKurallari", grupKurallari))
@@ -130,9 +133,10 @@ def start(bot, update):
         \n /YokAtlas - YÖK Atlas neden önceki yıllara ait başarı sıranızı göstermiyor? \
         \n /GirisimciDestekleri - Üniversitenin girişimci desteği var mı? \
         \n /IsBulmaOranlari - Mezunlarınızın iş bulma oranları ve süreleri nelerdir?\
-        \n /HocalarimizAyriliyormu - Okuldan hocalar ayrılıyormuş diye bir duyum aldım doğru mu?\
         \n /KampusFotolari - Kampüsümüzden görüntüler\
         \n /HangiBolumuSecmeliyim - Bilgisayar Mühendisliğini mi seçmeliyim, XXXX Mühendisliğini mi seçmeliyim??\
+        \n /Siralama - Yusuf Hoca'nın sıralama ile ilgili tahmin aralığı\
+        \n /KacYildaMezun - Bilgisayar Mühendisliğinin meşhur zorluğu ile ilgili hocalarımızdan son senelerde ki pozitif değişme hakkında \
         \n /GrupKurallari - Grubumuzun ufak kuralları \
         \n Adayları Bilgilendirme Grubu - https://t.me/GTU_CSE_2020")
  
@@ -157,6 +161,14 @@ def NasilBilgisayar(bot, update):
 def nedenGtu(bot, update):
     
     update.message.reply_text('GTU konumu itibari ile GOSB, TÜBİTAK Serbest Bölge, KOSGEB ve benzeri bir çok AR-GE Merkezi alanında bulunmaktadır. Bu durum staj, mezuniyet öncesi ve sonrası iş olanakları sağlamaktadır. İstanbul’a yakın olması nedeniyle İstanbul’da ikamet etme ve çalışma olanağı sağlamaktadır. Öğrencilere yaptırılan projelerle sadece teorik bilgide kalmayan bunun yanında saha tecrübesi kazandıran bir eğitim verilmektedir.')
+
+def Siralama(bot, update):
+    
+    update.message.reply_text('Yusuf Sinan Akgül hocanın 2020 sıralama tahmini ile ilgili yazdığı yazı şöyledir \n https://t.me/GTU_CSE_2020/252')
+
+def KacYildaMezun(bot, update):
+    
+    update.message.reply_text('Bu arada geçen sen bölümümüzün ortalama mezuniyet süresi 5.6 yıldı. Buna göre gelen kadar mezun olan var ama bazıları geç mezun oluyor.Mezun olma süresi Bugünlerde durum daha iyi olabilir çünkü son 4-5 yıldır öğrencilerin bölüme sahip olma seviyeleri artmaya başladı. Ama sonuç olarak GTÜ içerisinde mezun olma süresi BMden daha uzun bölüm olduğunu sanmıyorum. Bu istenilen bir durum değil tabi ki ama bu rakamı düşük tutmak için ders kalitesinden taviz vermemiz mümkün değil.')
 
 def HangiDiller(bot, update):
     
@@ -359,7 +371,7 @@ def grupKurallari(bot, update):
                                 \n6) Grupta sizleri bilgilendirmek için varız. Grup kurulduğu günden itibaren mesajları görmeniz mümkündür. Bu yüzden aratma opsiyonunu kullanarak tek kelimelik aramalar ile sorunuzun cevabına ulaşabilirsiniz. Bulamazsanız cevaplamak için buradayız zaten 🙂')
 
 def kampusFotolari(bot,update):
-    update.message.reply_text('Kampus fotolarını sitemizden görmek icin: http://www.gtu.edu.tr/kategori/2362/0/display.aspx?languageId=1 \nOnedio üzerinden görmek için: https://onedio.com/haber/gorsel-guzellikleriyle-adeta-dev-bir-studyoyu-andiran-gebze-teknik-universitesi-ne-ait-10-fotograf-711978')
+    update.message.reply_text('Kampus fotolarını sitemizden görmek icin: http://www.gtu.edu.tr/kategori/2362/0/display.aspx?languageId=1 \n')
 
 def hangiBolumuSecmeliyim(bot,update):
 
