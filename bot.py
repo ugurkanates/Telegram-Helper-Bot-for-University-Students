@@ -74,7 +74,7 @@ def main():
 
 
 
-
+    dp.add_handler(CommandHandler("PuanYetmiyor",puanYetmiyor))
     dp.add_handler(CommandHandler("UzmanlikAlanBelgesi", uzmanlikAlanBelgesi))
     dp.add_handler(CommandHandler("YokAtlas", yokAtlas))
     dp.add_handler(CommandHandler("GirisimciDestekleri", girisimciDestekleri))
@@ -131,6 +131,7 @@ def start(bot, update):
         \n /NasilBilgisayar - Nasil Bilgisayar almalıyım ?\
         \n /UzmanlikAlanBelgesi - Diplomanın yanında herhangi bir ek belge veriliyor mu?\
         \n /YokAtlas - YÖK Atlas neden önceki yıllara ait başarı sıranızı göstermiyor? \
+        \n /PuanYetmiyor - Puanım yetmiyor , GTU istiyorum ne yapmalıyım ? \
         \n /GirisimciDestekleri - Üniversitenin girişimci desteği var mı? \
         \n /IsBulmaOranlari - Mezunlarınızın iş bulma oranları ve süreleri nelerdir?\
         \n /KampusFotolari - Kampüsümüzden görüntüler\
@@ -311,10 +312,13 @@ def basarilar(bot, update):
 
 def YurtDisi(bot, update):
     
-    update.message.reply_text('Merhaba,ben Şeyma 2015 lisans 2018 yüksek lisans GTU mezunuyum.Akredatisyon mevzusu ile ilgili birseyler söyleyebilirim sanirim.Bu yıl basinda İngiltere başta olmak üzere,güney Kore, Finlandiya,Almanya gibi farklı ülkelere doktora başvurusu yaptım.Aranan şeyler ielts,iyi bir ortalama(honor student olup olamama),projeler,mulakatlarda sorulan matamatik(lineer cebir) sorularına  yanıtlar, yaptığım işlerle ilgili sorulara yanıtlar  idi. \
-             Online kod da yazdırdılar ancak doktora bursu için ortalamanın çok önemli olduğunu farkettim.akreditasyon ise kimsenin umrunda olmadı.suan okul iki dilde mezuniyet belgesi veriyor onu yollamak her yer için yeterli oldu.guney Kore \
-                     de burs kazandım ve onlar bir miktar daha doküman konusunda titizdi(ailemin her türlü belgesini noterde cevirtip cevirtip istediler) ama onlar da akreditasyon sormadilar. Cambridge doktorada 3.80 lisans notu altını almıyor onu ogredim. Avrupa bir miktar daha rahat ama her halükarda akreditasyon mevzusu hiç olmadı. Şuan İngiltere de doktora yapıyorum bu arada.')
+    update.message.reply_text('Merhaba, ben Şeyma Yucer. GTU 2015 lisans, 2018 yüksek lisans mezunuyum. Şuan Kuzey İngilterede bulunan Durham Üniversitesinde doktora yapıyorum. Geçen yıl akreditasyonla ilgili çok fazla soru sorulduğu için kendi doktora başvuru sürecimden bahsedip, soruların akademik olan kısmına cevap vermek istiyorum. 2019 başında, İngiltere başta olmak üzere, Güney Kore, Finlandiya, Almanya gibi farklı ülkelere doktora başvurusu yaptım. Aranan şeylerin ortak olanları: IELTS, iyi bir ortalama (min. 3.00), mezuniyet derecesi, yaptığın projeler, bu projelerden çıkan yayınlar, bunları anlatabiliyor olman, mülakatlarda sorulan veri yapıları ve lineer cebir sorularına yaklaşımın ve yanıtlarını nasıl kodladığın idi. Ancak hiçbir başvurumda akreditasyon sorulmadı, başvurularımı ilerlettiğim, belgelerini tamamladığım Güney Koredeki üniversiteö ailemle ilgili nüfus kayıt noter tasdikli çeviri bile istedi ama akreditasyon istemedi. Okulun size sağlayacağı en önemli belge, İngilizce mezuniyet belgesi ve sınıf sıralama belgesi. Sıralama veriliyor lisans için, mezuniyet de İngilizce-Türkçe beraber zaten. Başvuru zamanı geldiğinde akreditasyonun sorun olmayacağını, İngilizce, not ortalaması ve veri yapılarının çok daha fazla önemli olduğunu bir kez daha adaylara belirtmek isterim')
 
+def puanYetmiyor(bot,update):
+
+    update.message.reply_text('GTU Bilgisayar Mühendisliğine puanım yetmiyor, üzülmeli miyim? \
+             \n Arkadaşlar, GTÜ BM olarak iyi bir lisans eğitimi verdiğimize inanıyoruz, bizim programımızı bilen ve isteyen adayların tabi ki bizde öğrenci olmasını isteriz ancak alabileceğimiz öğrenci sayısı belli, aşmamız mümkün değil. Eğer puanınız bu bölüm için yetmiyorsa, üzülmeyin, \
+             \n Türkiyede çok sayıda BM bölümü mevcut, araştırın, sizin istediğinize en uygun bölümü bulun ve ondan sonra yapacağınız tek şey derslerinize dikkat etmek, sürekli olarak başka kaynaklardan BMnin temelleri ve yeni gelişen teknolojileri hakkında bilgi edinmek olsun. Bunu yaparsanız, sizin ne GTÜ BMye ne de MIT CSe ihtiyacınız var, zaten iyi bir mühendis olacaksınız. Bir bölüm sizin iyi bir mühendis olmanız için bir araçtır, bölümlere kabul edilmeyi amaç olarak almayın kendinize. Ülkemizde uygulanan üniversite öğrenci seçme sistemi maalesef çok başarılı değil, sınav hazırlık süreci çok uzun ve hazırlık sürecinden elde edilen birikimlerin sonradan işe yaraması beklenmiyor. Bu sınav sonucunu kendinize sınır çekmek için kullanmayın, kendinizi diğer adaylardan daha az puan aldığınız için yetersiz görmeyin aynı şekilde yüksek puan almanız da diğerlerinden farklı olduğunuzu göstermez. Bu sınav bir üniversiteye yerleşmek için bir aşamadır. Esas çalışma, kendinizi yetiştirme, geliştirme bu aşamadan sonra başlar. GTÜ BMnin diğer üniversitelerden farklı yaptığı tek şey belki biraz fazla ödev ve proje verip, bunların yapıldığından emin olmaya çalışmasıdır. Aynı disiplini kendiniz başka üniversitelerde uygulamamanız için bir neden yok. Defalarca söylediğim gibi iş sizde bitiyor, iyi bir mühendis olmak için bölüm sadece yardımcı bir araçtır ama tek başına sizi iyi bir mühendis yapmaz. Gayret eden, sürekli araştıran ve ileride kalan birisi için hangi bölümde okuduğun çok bir önemi yoktur.')
 
 def ciftveYanDal(bot, update):
     
