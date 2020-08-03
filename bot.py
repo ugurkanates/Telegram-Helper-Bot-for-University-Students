@@ -71,6 +71,7 @@ def main():
     dp.add_handler(CommandHandler("Siralama", Siralama))
     dp.add_handler(CommandHandler("KacYildaMezun", KacYildaMezun))
     dp.add_handler(CommandHandler("MuallimKoyKYK", MuallimKoyKYK))
+    dp.add_handler(CommandHandler("AkreditasyonBilmece", AkreditasyonBilmece))
 
 
 
@@ -136,6 +137,7 @@ def start(bot, update):
         \n /PuanYetmiyor - Puanım yetmiyor , GTU istiyorum ne yapmalıyım ? \
         \n /GirisimciDestekleri - Üniversitenin girişimci desteği var mı? \
         \n /MuallimKoyKYK - MuallimKoy Yurdu ile ilgili bilgiler \
+        \n /AkreditasyonBilmece - Akreditasyon olayının gercegi ile ilgili \
         \n /IsBulmaOranlari - Mezunlarınızın iş bulma oranları ve süreleri nelerdir?\
         \n /KampusFotolari - Kampüsümüzden görüntüler\
         \n /HangiBolumuSecmeliyim - Bilgisayar Mühendisliğini mi seçmeliyim, XXXX Mühendisliğini mi seçmeliyim??\
@@ -181,7 +183,10 @@ def HangiDiller(bot, update):
 def MuallimKoyKYK(bot, update):
     
     update.message.reply_text('Gebze Muallimköy KYKdan biraz bahsetmek gerekirse en başta ülkemizdeki diğer KYK lara göre gayet iyi durumda olduğunu söyleyebiliriz. Yurdun kapasitesi yaklaşık 1000 kişilik ve ücreti aylık 280 liradır. Odaları 3 kişilik, banyo mutfak ve tuvalet odanın içindedir. Odaların hepsi balkonlu ve birçoğu deniz manzaralıdır. Yurdun bir adet kantini, kütüphanesi ve sosyal tesisi bulunmaktadır. Akşamları arkadaşlarınızla kantinde vakit geçirebilir ders çalışmak için kütüphaneyi kullanabilirsiniz. Kütüphanenin normal zamanlarda yeterli, final ve vize zamanı yetersiz geldiğini söyleyebilirim. Bunun yanı sıra sosyal tesislerde birçok kurs verilmekte. Gitar kursundan işaret diline, Almancadan çizim dersine kadar birçok kurstan faydalanabilirsiniz.Yurdun çevresinde temel ihtiyaçlarınızı giderebileceğiniz 2 adet market bulunmakta.Ek olarak bir tane çiğköfteci ve kıraathane den başka bir şey yok ama zaten belediye otobüsüyle Gebze Center a 20 dakika sürüyor. Yurdun dezavantajlarına gelecek olursak birincisi ulaşım. Yurttan okula özel servis ve belediye otobüsüyle ulaşabilirsiniz. Özel servis ile ulaşım 15 dakika sürmekte ve her saat servis bulunmakta fakat aylık 200 lira civarı ve her sene zamlanıyor. Belediye otobüsünde ise sabahları 3 tane akşamları 1 tane express bulunmakta. Express ile ulaşım da 15 dakika sürmekte fakat sıra bekleme ve kalabalık gibi problemler ortaya çıkabiliyor. Bunun dışındaki saatlerde 20 dakikada bir normal belediye otobüsleri var ve ortalama 50-55 dakika sürüyor. Ücreti ise bir öğrenci basımı 1.60 TL. Haftasonları ise belediye otobüsleri saatte bire özel servisler ise günde 3 taneye düşüyor. Diğer bir dezavantaj ise yedekler mevzusu. Erkeklerde ilk 40-50 yedek ilk bir ay içinde yerleşebiliyor fakat sonrasının çıkması 2. Dönemi bulabiliyor. Kızlarda ise bu durum çok daha yavaş ilerliyor ve hiç çıkmama durumu olabiliyor. Bu yüzden yedeklerde çok geride olan arkadaşların alternatif çözümler bulmasını tavsiye ediyorum.')
+def AkreditasyonBilmece(bot,update):
 
+    update.message.reply_text('Yusuf Hocanın konuyla ilgili yazdigi 3 ardisik mesaj icin tiklayin. \n https://t.me/GTU_CSE_2020/3876')   
+    
 def arastirmaOlanaklari(bot, update):
     
     update.message.reply_text('Bilgisayar Mühendisliği bölümü olarak 11 adet laboratuvar ile araştırma çalışmalarını sürdürmekteyiz.\
