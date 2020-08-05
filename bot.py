@@ -76,6 +76,8 @@ def main():
 
 
 
+    dp.add_handler(CommandHandler("YatayGecisGuncel", yataygecisguncel))
+    dp.add_handler(CommandHandler("amazon", amazon))
 
     dp.add_handler(CommandHandler("PuanYetmiyor",puanYetmiyor))
     dp.add_handler(CommandHandler("UzmanlikAlanBelgesi", uzmanlikAlanBelgesi))
@@ -142,6 +144,8 @@ def start(bot, update):
         \n /KampusFotolari - Kampüsümüzden görüntüler\
         \n /HangiBolumuSecmeliyim - Bilgisayar Mühendisliğini mi seçmeliyim, XXXX Mühendisliğini mi seçmeliyim??\
         \n /Siralama - Yusuf Hoca'nın sıralama ile ilgili tahmin aralığı\
+        \n /Amazon - Amazonda gelistirici olan mezunumuzun yurtdisi ve is ile ilgili gorusleri \
+        \n /YatayGecisGuncel - Yatay Gecis ile ilgili eski mezunumuzun gorusleri \
         \n /KacYildaMezun - Bilgisayar Mühendisliğinin meşhur zorluğu ile ilgili hocalarımızdan son senelerde ki pozitif değişme hakkında \
         \n /GrupKurallari - Grubumuzun ufak kuralları \
         \n Adayları Bilgilendirme Grubu - https://t.me/GTU_CSE_2020")
@@ -167,6 +171,18 @@ def NasilBilgisayar(bot, update):
 def nedenGtu(bot, update):
     
     update.message.reply_text('GTU konumu itibari ile GOSB, TÜBİTAK Serbest Bölge, KOSGEB ve benzeri bir çok AR-GE Merkezi alanında bulunmaktadır. Bu durum staj, mezuniyet öncesi ve sonrası iş olanakları sağlamaktadır. İstanbul’a yakın olması nedeniyle İstanbul’da ikamet etme ve çalışma olanağı sağlamaktadır. Öğrencilere yaptırılan projelerle sadece teorik bilgide kalmayan bunun yanında saha tecrübesi kazandıran bir eğitim verilmektedir.')
+
+def yataygecisguncel(bot, update):
+    
+    update.message.reply_text('Yatay geçiş yapıp kayıt yaptırdıktan sonra intibaklar yapılır. İntibaklar yapıldıktan sonra tamamlanan kredi sayısına göre ilgili sınıfa atama yapılır. Önceki bölümde ve geçiş yapılan bölümde okunan toplam yıl sayısı (hazırlık hariç) 4 yılı geçtikten sonra harç ödenmeye başlanır. KYK burs ve kredilerinden hazırlık hariç toplamda 4 yıl faydalanılabilir. Ancak yurt için aynı şey geçerli değildir. Yatay geçiç yaptıktan sonraki bölümünüzdeki eğitiminizin sonuna  kadar yurtta kalabilirsiniz. Yatay geçiş yaptıktan sonra normal öğrenciden hiçbir farkınız olmadan eğitiminize devam edersiniz. Kimse sizin yatay geçişle geçtiğinizi bile bilmez. Bazı derslerinizi saydırdığınız için irregular devam etmek zorunda kalabilirsiniz. \
+    \n Ben bir yıl hazırlık ve 3 yıl moleküler biyoloji ve genetik bölümü okuduktan sonra bilgisayar mühendisliğine geçiş yapmaya karar vermiştim. Aynı üniversiteden geçiş yaptığığım için ortak derslerin neredeyse hepsi sayılmıştı. Bölüm dersleri hariç 1. sınıf derslerinin hepsi bitmişti. 2. sınıftan başlamıştım ve 3 yılda  bitirebildim. 3 yıl farklı bölümde okuduktan sonra bilgisayar mühendisliğine alışmak biraz zor olmuştu benim için ama kısa sürede alıştım. İki farklı sınıftan  dersler alarak devam ettiğim için bazen ders saatleri bazen de sınav saatleri çakışabiliyordu. Ama bunlar da bir şekilde ayarlanabiliyor. İki farklı sınıftan  dersler aldığım için çok fazla kişiyle tanışma fırsatım olmuştu. Bu da bi avantaj sayılabilir.')
+
+def amazon(bot, update):
+    
+    update.message.reply_text('Amazonda yazilim mühendisligi yapan Halit Karakısın gorusleri hakkında. \
+    \n Merhaba, ben Muhammet Halit Karakış.GTU(gyte) 2013 lisans mezunuyum. Şu an Kanadada Amazon Web Services (AWS) şirketinde Software Development Engineer II pozisyonunda çalışıyorum, bu yazıda paylaştıklarım kendi fikirlerimdir. GTÜ Bilgisayar Mühendisliği Aday Tanıtım Grubunda ABET ile ilgili çok soru sorulduğunu ve yurtdışı için önşart şeklinde algılandığını gördüm. Bununla ilgili deneyimlerimi paylaşmak istiyorum.\
+    \n Ben Türkiye’de 3 yıl tecrübe kazandıktan sonra yurtdışından iş teklifi aldım. Mülakat ve görüşmeler süresince bana hiç ABET/akreditasyon sorulmadı. Hatta açıkçası ben ABET’i bu sene gruptaki sorularla duydum. Kanada çalışma izni ve oturum izni gereğince bilgisayar mühendisliği diplomamın kabul edilmesi gerekiyordu, bunun için çalıştıkları bir şirkete diplomamı ve okuldan aldığım transkriptimi iletmem yeterli oldu, akreditasyon veya ABET gerekmedi ve değerlendirme için yeterli puanı sağladı. \
+    \n Mülakat sürecinde bana en çok yardımcı olan 2. ve 3. sınıfta aldığım derslerdi. Çünkü ilk iki kodlama mülakatımda gelen sorular üniversitedeki sınav sorularımla neredeyse 1e 1 uyuşuyordu. Soruların neredeyse hepsi, veri yapıları ve algoritmalar üzerineydi, ve en önemlisi soruyu çözmenden çok nasıl düşündüğün, ne kadar bildiğin, nasıl değerlendirme yaptığın ve kendini nasıl ifade ettiğindi. Bunların iyileşmesi için de okumanın haricinde çokça farklı problemlerle birebir uğraşman ve yüzeysel kalmaması için biraz zorlanman gerektiğine inanıyorum.')
 
 def Siralama(bot, update):
     
