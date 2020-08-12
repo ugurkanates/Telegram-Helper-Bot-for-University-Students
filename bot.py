@@ -85,6 +85,7 @@ def main():
     dp.add_handler(CommandHandler("GirisimciDestekleri", girisimciDestekleri))
     dp.add_handler(CommandHandler("IsBulmaOranlari", isBulmaOranlari))
     dp.add_handler(CommandHandler("KampusFotolari", kampusFotolari))
+    dp.add_handler(CommandHandler("YoutubeTanitim", youtubeTanitim))
     dp.add_handler(CommandHandler("HangiBolumuSecmeliyim", hangiBolumuSecmeliyim))
     dp.add_handler(CommandHandler("GrupKurallari", grupKurallari))
     # on noncommand i.e message - echo the message on Telegram
@@ -146,6 +147,7 @@ def start(bot, update):
         \n /Siralama - Yusuf Hoca'nın sıralama ile ilgili tahmin aralığı\
         \n /Amazon - Amazonda gelistirici olan mezunumuzun yurtdisi ve is ile ilgili gorusleri \
         \n /YatayGecisGuncel - Yatay Gecis ile ilgili eski mezunumuzun gorusleri \
+        \n /YoutubeTanitim - Youtube uzerinde yapilmis tanitim videosu \
         \n /KacYildaMezun - Bilgisayar Mühendisliğinin meşhur zorluğu ile ilgili hocalarımızdan son senelerde ki pozitif değişme hakkında \
         \n /GrupKurallari - Grubumuzun ufak kuralları \
         \n Adayları Bilgilendirme Grubu - https://t.me/GTU_CSE_2020")
@@ -171,6 +173,11 @@ def NasilBilgisayar(bot, update):
 def nedenGtu(bot, update):
     
     update.message.reply_text('GTU konumu itibari ile GOSB, TÜBİTAK Serbest Bölge, KOSGEB ve benzeri bir çok AR-GE Merkezi alanında bulunmaktadır. Bu durum staj, mezuniyet öncesi ve sonrası iş olanakları sağlamaktadır. İstanbul’a yakın olması nedeniyle İstanbul’da ikamet etme ve çalışma olanağı sağlamaktadır. Öğrencilere yaptırılan projelerle sadece teorik bilgide kalmayan bunun yanında saha tecrübesi kazandıran bir eğitim verilmektedir.')
+
+def youtubeTanitim(bot, update):
+    
+    update.message.reply_text('Bu sene sorulari cevapladigimiz 2bucuksaatlik yayında akreditasyon,yurt disi calisma , staj imkanları , akademik kadro, savunma sanayi ve ozel sektor , yurt imkanları ve diger sorulariniz yanitlandi.\
+    \n Asagidan erisebilirsiniz https://www.youtube.com/watch?v=tiw123B89fs ')
 
 def yataygecisguncel(bot, update):
     
