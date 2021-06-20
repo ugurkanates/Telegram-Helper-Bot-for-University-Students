@@ -6,6 +6,11 @@ It's life style and educational functionalities
 Developed with Linux Mint (Python3.5)
 Tested and Build both Ubuntu and Windows systems.
 
+### 2021 Update
+* The bot works with Python 3.9.5
+* Make sure that you have put your Bot TOKEN which is taken by using Botfather on Telegram. 
+
+
 For local build you can just build docker and run container .
 For online build I used Heroku for cloud provider.
 ![alt text](https://i.postimg.cc/V6zdRWNK/Screenshot-Capture-2019-07-11-18-00-12.png)
